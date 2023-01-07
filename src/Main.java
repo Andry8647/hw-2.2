@@ -20,6 +20,7 @@ public class Main {
         printOnCar(hyundai);
         printOnCar(lada);
         printOnBus(liaz);
+
     }
     public static void printOnCar( Car car){
         System.out.println(car.getBrand() + " "
