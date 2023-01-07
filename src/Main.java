@@ -14,12 +14,16 @@ public class Main {
         Car hyundai = new Car("Hyundai","Avante", "Оранжевый", -2016,null,-50,2.2,"АКПП", "Седан", null, 7, true,new Car.Key(),new Car.Insurance());
 
         Bus liaz = new Bus("LIAZ","Z1","Белый",2022, "Россия",190);
+        Bus paz = new Bus("PAZ","1","Синий",-5, null,220);
+        Bus maz = new Bus("MAZ","Kartoshka","Картофельный",2022, "Белорусь",100);
         printOnCar(audi);
         printOnCar(bmw);
         printOnCar(kia);
         printOnCar(hyundai);
         printOnCar(lada);
         printOnBus(liaz);
+        printOnBus(paz);
+        printOnBus(maz);
 
     }
     public static void printOnCar( Car car){
