@@ -3,13 +3,9 @@ package transport;
 import java.lang.invoke.StringConcatException;
 import java.time.LocalDate;
 
-public class Car {
-   private final String brand;
-   private final String madel;
+public class Car extends Transport {
+
     private double engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
     private String korobka;
     private final  String kuzov;
     private String number;
@@ -18,12 +14,14 @@ public class Car {
     private Key key;
     private Insurance insurance;
 
+
     public Car(String brand,
                String madel,
-               double engineVolume,
                String color,
                int year,
                String country,
+               int maxSpeed,
+               double engineVolume,
                String korobka,
                String kuzov,
                String number,
@@ -31,35 +29,12 @@ public class Car {
                boolean rezSummer,
                Key key,
                Insurance insurance) {
-        if (brand != null){
-            this.brand = brand;
-        }else {
-            this.brand = "default";
-        }
-        if(madel!= null){
-            this.madel = madel;
-        }else {
-            this.madel = "default";
-        }
+        super(brand, madel, color, year, country, maxSpeed);
+
         if(engineVolume>0){
             this.engineVolume =engineVolume;
         }else {
             this.engineVolume = 1.5;
-        }
-        if(color!=null){
-            this.color = color;
-        }else {
-            this.color = "Белый";
-        }
-        if (year>0){
-            this.year = year;
-        }else {
-            this.year = 2000;
-        }
-        if (country!=null){
-            this.country = country;
-        }else {
-            this.country = "default";
         }
         if (korobka!=null){
             this.korobka = korobka;
@@ -86,31 +61,8 @@ public class Car {
         }else {
             this.insurance = insurance;
         }
-            this.mest = mest;
+        this.mest = mest;
         this.rezSummer = rezSummer;
-    }
-
-    public Car(String brand,
-               String madel,
-               double engineVolume,
-               String color,
-               int year,
-               String country
-               ){
-        this(
-                brand,
-                madel,
-                engineVolume,
-                color,
-                year,
-                country,
-                "МКПП",
-                "Седан",
-                "X000XX152",
-                5,true,
-                new Key(),
-                new Insurance()
-        );
     }
 
     public Insurance getInsurance() {
@@ -137,13 +89,7 @@ public class Car {
         this.engineVolume = engineVolume;
     }
 
-    public String getColor() {
-        return color;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
 
     public String getKorobka() {
         return korobka;
@@ -177,22 +123,6 @@ public class Car {
         this.rezSummer = rezSummer;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getMadel() {
-        return madel;
-    }
-
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
     public String getKuzov() {
         return kuzov;
