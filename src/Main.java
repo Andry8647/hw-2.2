@@ -2,31 +2,37 @@ import transport.*;
 
 public class Main {
     public static void main(String[] args) {
-        Car lada = new Car("LADA","Vesta",2.0);
-        Car BMW = new Car("BMW","M5",4.4);
-        Car Audi = new Car("Audi","A7",4.0);
-        Car Haval = new Car("Haval","H7",2.0);
-        Bus MAZ = new Bus("MAZ","A10",5.0);
-        Bus Liaz = new Bus("Liaz","50",6.0);
-        Bus Man = new Bus("Man","K1",4.0);
-        Bus Hyundai = new Bus("Hyundai","50A",8.0);
-        BigCar MAN = new BigCar("MAN","H10",4.0);
-        BigCar KAMAZ = new BigCar("KAMAZ","L1",4.0);
-        BigCar Maz = new BigCar("MAZ","P1",4.0);
-        BigCar ZIL = new BigCar("ZIL","D1",4.0);
-        lada.pitStop();
-        Drivers1 Anton = new Drivers1("антон владимирович бешенов", "C",3);
-        Drivers2 Andrei = new Drivers2("Андрей владимирович бешенов", "B",3);
-        Drivers3 Artem = new Drivers3("Артем владимирович бешенов", "D",3);
+
+
+        Drivers1 Anton = new Drivers1("Антон", "B",3);
+        Drivers2 Andrei = new Drivers2("Андрей ", "C",3);
+        Drivers3 Artem = new Drivers3("Артем ", "D",3);
        // Anton.goDo();
-        Maz.startMoving();
-        Maz.stopMoving();
-        lada.pitStop();
-        lada.bestSpeed();
-        lada.bestTime();
-        MAZ.printInfo(Anton);
-      KAMAZ.printInfo(Artem);
-      BMW.printInfo(Andrei);
+        Car lada = new Car("LADA","Vesta",2.0,Anton);
+        Car BMW = new Car("BMW","M5",4.4,Anton);
+        Car Audi = new Car("Audi","A7",4.0,Anton);
+        Car Haval = new Car("Haval","H7",2.0,Anton);
+        Bus MAZ = new Bus("MAZ","A10",5.0,Andrei);
+        Bus Liaz = new Bus("Liaz","50",6.0,Andrei);
+        Bus Man = new Bus("Man","K1",4.0,Andrei);
+        Bus Hyundai = new Bus("Hyundai","50A",8.0,Andrei);
+        BigCar MAN = new BigCar("MAN","H10",4.0,Artem);
+        BigCar KAMAZ = new BigCar("KAMAZ","L1",4.0,Artem);
+        BigCar Maz = new BigCar("MAZ","P1",4.0,Artem);
+        BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem);
+        printInfo(lada);
+        printInfo(BMW);
+        printInfo(Audi);
+        printInfo(Haval);
+        printInfo(MAZ);
+        printInfo(Liaz);
+        printInfo(Man);
+        printInfo(Hyundai);
+        printInfo(MAN);
+        printInfo(KAMAZ);
+        printInfo(Maz);
+        printInfo(ZIL);
+
 
 
 
@@ -71,5 +77,8 @@ public class Main {
 //                + " года выпуска, сборка "  +  bus.getCountry()
 //                + " ," + bus.getColor() + " цвет " +" максимальная скорость " + bus.getMaxSpeed());
 //    }
+    }
+    private static void printInfo(Transport<?> transport){
+        System.out.println("Водитель " + transport.getDriver().getName() +" c правами категории  "+ transport.getDriver().getPrava() + " управляет автомобилем " + transport.getBrand() + " и будет учавствовать в заезде");
     }
 }

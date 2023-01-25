@@ -1,13 +1,25 @@
 package transport;
 
 public class Drivers1 extends Drivers{
-    private String name;
-    private String prava;
-    private int staj;
 
     public Drivers1(String name, String prava, int staj) {
         super(name,prava,staj);
 
     }
 
+    @Override
+    public void goDo() {
+        System.out.println("Водитель категории " + getPrava() + " начал движение");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Водитель категории " + getPrava() + " закончил движение");
+    }
+
+    @Override
+    public void zapravitAvto() {
+        System.out.println("Водитель категории " + getPrava() + " заправляет авто");
+
+    }
 }

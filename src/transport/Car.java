@@ -1,51 +1,38 @@
 package transport;
 
-public class Car <A extends Transport & Competing,B extends Drivers2> {
-    private String model;
-
-    private String brand;
-    private double engineCapacity;
-    public Car(String model, String brand, double engineCapacity) {
-        if (brand != null) {
-            this.brand = brand;
-        } else {
-            this.brand = "default";
-        }
-        if (model != null) {
-            this.model = model;
-        } else {
-            this.model = "default";
-        }
-        if (engineCapacity < 0) {
-            this.engineCapacity = 1.6;
-        } else {
-            this.engineCapacity = engineCapacity;
-        }
-
+public class Car  extends Transport<Drivers1> {
+    public Car(String brand, String model, double engineCapacity, Drivers1 driver) {
+        super(brand, model, engineCapacity, driver);
     }
 
-    public void printInfo(B drivers){
-        System.out.println("Водитель " + drivers.getName()  + " управляет автомобилем " + model + " и будет участвовать в заезде");
-    }
-    public void pitStop() {
-        System.out.println("Пит стоп");
-    }
-
-
-    public void bestTime() {
-        System.out.println("Лучшее время круга" );
-    }
-
-
-    public void bestSpeed() {
-        System.out.println("Максимальна скорость ");
-    }
+    @Override
     public void startMoving(){
-        System.out.println("Начал движение " + brand);
+        System.out.println("Автомобиль марки " + getBrand() + " начал движение");
     }
+    @Override
     public void stopMoving(){
-        System.out.println("Закончить движение " + brand);
+        System.out.println("Автомобиль марки " + getBrand() + " закончил движение");
     }
+@Override
+    public void pitStop() {
+        System.out.println("Пит-Стоп у автомобиля");
+    }
+    @Override
+    public void bestTime() {
+        int minSpeed = 20;
+        int maxSdeep = 30;
+        int speed = (int) (minSpeed + (maxSdeep-minSpeed)*Math.random());
+        System.out.println("Лучшее время круга у автомобиля" +speed);
+    }
+
+    @Override
+    public void bestSpeed() {
+        int minSpeed = 200;
+        int maxSdeep = 270;
+        int speed = (int) (minSpeed + (maxSdeep-minSpeed)*Math.random());
+        System.out.println("Максимальная скорость у автомобиля" +speed);
+    }
+
 }
     //    private double engineVolume;
 //    private String korobka;

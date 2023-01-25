@@ -1,24 +1,20 @@
 package transport;
 
-public class Drivers {
+public abstract class Drivers {
     private String name;
     private String prava;
     private int staj;
-
-    public void goDo() {
-        System.out.println("Начать движение");
-    }
-    public void stop() {
-        System.out.println("остановиться");
-    }
-    public void zapravitAvto() {
-        System.out.println("заправить авто");
-    }
     public Drivers(String name, String prava, int staj) {
         this.name = name;
         this.prava = prava;
         this.staj = staj;
     }
+
+    public abstract void goDo();
+
+    public abstract void stop();
+    public  abstract void zapravitAvto();
+
 
 
     public String getName() {

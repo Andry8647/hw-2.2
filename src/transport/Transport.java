@@ -1,11 +1,12 @@
 package transport;
 
-public class Transport {
-private String brand;
-private String model;
+public abstract class  Transport<T extends Drivers> implements Competing{
+private final String brand;
+private final String model;
 private double engineCapacity;
+private T driver;
 
-    public Transport(String brand, String model, double engineCapacity) {
+    public Transport(String brand, String model, double engineCapacity, T driver) {
         if (brand != null) {
             this.brand = brand;
         } else {
@@ -21,24 +22,25 @@ private double engineCapacity;
         } else {
             this.engineCapacity = engineCapacity;
         }
+        setDriver(driver);
 
     }
 
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
+    }
 
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
 
     public String getModel() {
         return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public double getEngineCapacity() {
@@ -48,6 +50,18 @@ private double engineCapacity;
     public void setEngineCapacity(double engineCapacity) {
         this.engineCapacity = engineCapacity;
     }
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineCapacity=" + engineCapacity +
+                '}';
+    }
+    public abstract void  startMoving();
+
+    public abstract void stopMoving();
 
 
     //    private  String brand;
