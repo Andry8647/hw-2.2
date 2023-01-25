@@ -1,12 +1,11 @@
 package transport;
 
-public class Bus <A extends Transport & Competing,B extends Drivers1> {
-
+public class BigCar <A extends Transport & Competing,B extends Drivers3> {
     private String model;
 
     private String brand;
     private double engineCapacity;
-    public Bus(String model, String brand, double engineCapacity) {
+    public BigCar(String model, String brand, double engineCapacity) {
         if (brand != null) {
             this.brand = brand;
         } else {
@@ -22,18 +21,14 @@ public class Bus <A extends Transport & Competing,B extends Drivers1> {
         } else {
             this.engineCapacity = engineCapacity;
         }
-
     }
 
     public void printInfo(B drivers){
         System.out.println("Водитель " + drivers.getName()  + " управляет автомобилем " + model + " и будет участвовать в заезде");
     }
-
-
     public void pitStop() {
         System.out.println("Пит-Стоп");
     }
-
 
     public void bestTime() {
         System.out.println("Лучшее время круга");
@@ -41,7 +36,7 @@ public class Bus <A extends Transport & Competing,B extends Drivers1> {
 
 
     public void bestSpeed() {
-        System.out.println("Максимальна скорость ");
+         System.out.println("Максимальна скорость ");
     }
     public void startMoving(){
         System.out.println("Начал движение " + brand);
@@ -50,8 +45,3 @@ public class Bus <A extends Transport & Competing,B extends Drivers1> {
         System.out.println("Закончить движение " + brand);
     }
 }
-
-    //    public Bus(String brand, String madel, String color, int year, String country, int maxSpeed) {
-//        super(brand, madel, color, year, country, maxSpeed);
-//    }
-
