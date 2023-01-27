@@ -20,18 +20,20 @@ public class Main {
         BigCar KAMAZ = new BigCar("KAMAZ","L1",4.0,Artem);
         BigCar Maz = new BigCar("MAZ","P1",4.0,Artem);
         BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem);
-        printInfo(lada);
-        printInfo(BMW);
-        printInfo(Audi);
-        printInfo(Haval);
-        printInfo(MAZ);
-        printInfo(Liaz);
-        printInfo(Man);
-        printInfo(Hyundai);
-        printInfo(MAN);
-        printInfo(KAMAZ);
-        printInfo(Maz);
-        printInfo(ZIL);
+//        printInfo(lada);
+//        printInfo(BMW);
+//        printInfo(Audi);
+//        printInfo(Haval);
+//        printInfo(MAZ);
+//        printInfo(Liaz);
+//        printInfo(Man);
+//        printInfo(Hyundai);
+//        printInfo(MAN);
+//        printInfo(KAMAZ);
+//        printInfo(Maz);
+//        printInfo(ZIL);
+
+
 
 
 
