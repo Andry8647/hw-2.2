@@ -22,6 +22,7 @@ public class Main {
         BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem, null);
        printInfo(lada);
        lada.printType();
+
        MAN.printType();
        ZIL.printType();
        BMW.printType();
