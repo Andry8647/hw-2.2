@@ -6,6 +6,7 @@ private final String model;
 private double engineCapacity;
 private T driver;
 
+
     public Transport(String brand, String model, double engineCapacity, T driver) {
         if (brand != null) {
             this.brand = brand;
@@ -23,6 +24,7 @@ private T driver;
             this.engineCapacity = engineCapacity;
         }
         setDriver(driver);
+
 
     }
 
@@ -51,6 +53,7 @@ private T driver;
         this.engineCapacity = engineCapacity;
     }
 
+
     @Override
     public String toString() {
         return "Transport{" +
@@ -62,6 +65,9 @@ private T driver;
     public abstract void  startMoving();
 
     public abstract void stopMoving();
+    public abstract void printType();
+
+
 
 
     //    private  String brand;

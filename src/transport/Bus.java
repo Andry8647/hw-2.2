@@ -3,8 +3,14 @@ package transport;
 public class Bus  extends Transport<Drivers2>  {
 
 
-    public Bus(String brand, String model, double engineCapacity, Drivers2 driver) {
+    private BusVmestimost busVmestimost;
+    public Bus(String brand, String model, double engineCapacity, Drivers2 driver, BusVmestimost busVmestimost) {
         super(brand, model, engineCapacity, driver);
+        this.busVmestimost =busVmestimost;
+    }
+
+    public BusVmestimost getBusVmestimost() {
+        return busVmestimost;
     }
 
     @Override
@@ -16,6 +22,23 @@ public class Bus  extends Transport<Drivers2>  {
         System.out.println("Автобус марки " + getBrand() + " закончил движение");
     }
 
+
+    public void printType() {
+        if(getBusVmestimost() == BusVmestimost.VERYMIN ){
+            System.out.println("До 10");
+        } else if(getBusVmestimost() == BusVmestimost.MIN) {
+            System.out.println("От 15 до 25");
+        }else if(getBusVmestimost() == BusVmestimost.SRED) {
+            System.out.println("От 40 до 50");
+        }else if(getBusVmestimost() == BusVmestimost.BIG) {
+            System.out.println("От 60 до 80");}
+        else if(getBusVmestimost() == BusVmestimost.VERYBIG) {
+            System.out.println("От 100 до 120");}
+        else {
+            System.out.println("Данных по транспортному средству недостаточно");
+        }
+
+    }
 
 
     @Override
