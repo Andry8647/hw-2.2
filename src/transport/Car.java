@@ -11,6 +11,17 @@ public class Car  extends Transport<Drivers1> {
 
     }
 
+    @Override
+    public void passDiagnostics() throws Diagnostics {
+        if(getDriver().getPrava() != "С" & getDriver().getPrava() != null){
+            System.out.println("Права не подходят");
+        }else if(getDriver().getPrava() == null){
+            System.out.println("Необходимо указать тип прав!");
+        }else {
+            System.out.println("Права подходят");
+        }
+    }
+
     public BodyType getBodyTypes(){
 
         return bodyTypes;

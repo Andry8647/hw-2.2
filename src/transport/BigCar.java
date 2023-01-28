@@ -13,9 +13,23 @@ public class BigCar  extends Transport<Drivers3> {
 
     }
 
+
+
+
     public Gruz getGruz() {
 
         return gruz;
+    }
+
+    @Override
+    public void passDiagnostics() {
+        if(getDriver().getPrava() != "С" & getDriver().getPrava() != null){
+            System.out.println("Права не подходят");
+        }else if(getDriver().getPrava() == null){
+            System.out.println("Необходимо указать тип прав!");
+        }else {
+            System.out.println("Права подходят");
+        }
     }
 
     @Override

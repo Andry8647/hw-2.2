@@ -54,6 +54,14 @@ private T driver;
     }
 
 
+
+
+    public   void passDiagnostics() throws Diagnostics {
+
+
+    }
+
+
     @Override
     public String toString() {
         return "Transport{" +

@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Drivers1 Anton = new Drivers1("Антон", "B",3);
+        Drivers1 Anton = new Drivers1("Антон", "D",3);
         Drivers2 Andrei = new Drivers2("Андрей ", "C",3);
-        Drivers3 Artem = new Drivers3("Артем ", "D",3);
+        Drivers3 Artem = new Drivers3("Артем ", null,3);
        // Anton.goDo();
         Car lada = new Car("LADA","Vesta",2.0,Anton, BodyType.KUPE);
         Car BMW = new Car("BMW","M5",4.4,Anton,BodyType.SEDAN);
@@ -20,20 +20,27 @@ public class Main {
         BigCar KAMAZ = new BigCar("KAMAZ","L1",4.0,Artem, Gruz.N2);
         BigCar Maz = new BigCar("MAZ","P1",4.0,Artem, Gruz.N3);
         BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem, null);
-       printInfo(lada);
-       lada.printType();
 
-       MAN.printType();
-       ZIL.printType();
-       BMW.printType();
-       Audi.printType();
-       Hyundai.printType();
-       Haval.printType();
-       Liaz.printType();
-       KAMAZ.printType();
-       Maz.printType();
-       MAZ.printType();
-       Man.printType();
+        passDiagnostics(lada);
+        passDiagnostics(Maz);
+
+
+
+
+//       printInfo(lada);
+//       lada.printType();
+//
+//       MAN.printType();
+//       ZIL.printType();
+//       BMW.printType();
+//       Audi.printType();
+//       Hyundai.printType();
+//       Haval.printType();
+//       Liaz.printType();
+//       KAMAZ.printType();
+//       Maz.printType();
+//       MAZ.printType();
+//       Man.printType();
 //        printInfo(BMW);
 //        printInfo(Audi);
 //        printInfo(Haval);
@@ -92,6 +99,15 @@ public class Main {
 //                + " года выпуска, сборка "  +  bus.getCountry()
 //                + " ," + bus.getColor() + " цвет " +" максимальная скорость " + bus.getMaxSpeed());
 //    }
+    }
+    public static void passDiagnostics(Transport... transports){
+        for (Transport transport: transports) {
+            try{
+                transport.passDiagnostics();
+            }catch (Diagnostics e){
+                System.out.println("Необходимо указать тип прав!");
+            }
+        }
     }
     private static void printInfo(Transport<?> transport){
         System.out.println("Водитель " + transport.getDriver().getName() +" c правами категории  "+ transport.getDriver().getPrava() + " управляет автомобилем " + transport.getBrand() + " и будет учавствовать в заезде");

@@ -13,6 +13,8 @@ public class Bus  extends Transport<Drivers2>  {
         return busVmestimost;
     }
 
+
+
     @Override
     public void startMoving(){
         System.out.println("Автобус марки " + getBrand() + " начал движение");
