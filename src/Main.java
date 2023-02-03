@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Drivers1 Anton = new Drivers1("Антон", "D",3);
+        Drivers1 Anton = new Drivers1("Антон", "B",3);
         Drivers2 Andrei = new Drivers2("Андрей ", "C",3);
         Drivers3 Artem = new Drivers3("Артем ", null,3);
        // Anton.goDo();
@@ -22,7 +22,7 @@ public class Main {
         BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem, null);
 
         passDiagnostics(lada);
-        passDiagnostics(Maz);
+ //       passDiagnostics(Maz);
 
 
 
@@ -103,8 +103,8 @@ public class Main {
         for (Transport transport: transports) {
             try{
                 transport.passDiagnostics();
-            }catch (Diagnostics e){
-                System.out.println("Необходимо указать тип прав!");
+            }catch (UnsupportedOperationException e){
+                System.out.println(e.getMessage());
             }
         }
     }

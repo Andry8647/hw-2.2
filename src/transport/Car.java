@@ -12,13 +12,14 @@ public class Car  extends Transport<Drivers1> {
     }
 
     @Override
-    public void passDiagnostics() throws Diagnostics {
-        if(getDriver().getPrava() != "С" & getDriver().getPrava() != null){
-            System.out.println("Права не подходят");
-        }else if(getDriver().getPrava() == null){
-            System.out.println("Необходимо указать тип прав!");
-        }else {
+    public void passDiagnostics()  {
+        if(getDriver().getPrava() == null){
+            throw new UnsupportedOperationException("Необходимо указать тип прав!");
+        }else if( !getDriver().getPrava().equals("B") ){
+            throw new UnsupportedOperationException("Права не подходят");
+        }else  {
             System.out.println("Права подходят");
+
         }
     }
 

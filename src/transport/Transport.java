@@ -56,10 +56,7 @@ private T driver;
 
 
 
-    public   void passDiagnostics() throws Diagnostics {
-
-
-    }
+    public  abstract void passDiagnostics() ;
 
 
 //    @Override

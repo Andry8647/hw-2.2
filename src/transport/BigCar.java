@@ -27,12 +27,13 @@ public class BigCar  extends Transport<Drivers3> {
 
     @Override
     public void passDiagnostics() {
-        if(getDriver().getPrava() != "С" & getDriver().getPrava() != null){
-            System.out.println("Права не подходят");
-        }else if(getDriver().getPrava() == null){
-            System.out.println("Необходимо указать тип прав!");
-        }else {
+        if(getDriver().getPrava() == null){
+            throw new UnsupportedOperationException("Необходимо указать тип прав!");
+        }else if( !getDriver().getPrava().equals("D") ){
+            throw new UnsupportedOperationException("Права не подходят");
+        }else  {
             System.out.println("Права подходят");
+
         }
     }
 
@@ -53,6 +54,7 @@ public class BigCar  extends Transport<Drivers3> {
             System.out.println("Данных по транспортному средству недостаточно");
         }
     }
+
 
     @Override
     public void pitStop() {

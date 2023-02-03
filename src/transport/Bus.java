@@ -16,6 +16,17 @@ public class Bus  extends Transport<Drivers2>  {
     public void setBusVmestimost(BusVmestimost busVmestimost) {
         this.busVmestimost = busVmestimost;
     }
+    @Override
+    public void passDiagnostics()  {
+        if(getDriver().getPrava() == null){
+            throw new UnsupportedOperationException("Необходимо указать тип прав!");
+        }else if( !getDriver().getPrava().equals("C") ){
+            throw new UnsupportedOperationException("Права не подходят");
+        }else  {
+            System.out.println("Права подходят");
+
+        }
+    }
 
     @Override
     public void startMoving(){
