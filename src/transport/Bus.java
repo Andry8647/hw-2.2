@@ -13,7 +13,9 @@ public class Bus  extends Transport<Drivers2>  {
         return busVmestimost;
     }
 
-
+    public void setBusVmestimost(BusVmestimost busVmestimost) {
+        this.busVmestimost = busVmestimost;
+    }
 
     @Override
     public void startMoving(){
@@ -26,17 +28,9 @@ public class Bus  extends Transport<Drivers2>  {
 
 
     public void printType() {
-        if(getBusVmestimost() == BusVmestimost.VERYMIN ){
-            System.out.println("До 10");
-        } else if(getBusVmestimost() == BusVmestimost.MIN) {
-            System.out.println("От 15 до 25");
-        }else if(getBusVmestimost() == BusVmestimost.SRED) {
-            System.out.println("От 40 до 50");
-        }else if(getBusVmestimost() == BusVmestimost.BIG) {
-            System.out.println("От 60 до 80");}
-        else if(getBusVmestimost() == BusVmestimost.VERYBIG) {
-            System.out.println("От 100 до 120");}
-        else {
+        if(getBusVmestimost() != null ){
+            getBusVmestimost().toString();
+        } else {
             System.out.println("Данных по транспортному средству недостаточно");
         }
 

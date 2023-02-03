@@ -27,6 +27,9 @@ public class Car  extends Transport<Drivers1> {
         return bodyTypes;
     }
 
+    public void setBodyTypes(BodyType bodyTypes) {
+        this.bodyTypes = bodyTypes;
+    }
 
     @Override
     public void startMoving(){
@@ -37,28 +40,16 @@ public class Car  extends Transport<Drivers1> {
         System.out.println("Автомобиль марки " + getBrand() + " закончил движение");
     }
 
+
     @Override
     public void printType() {
-        if (getBodyTypes() == BodyType.XETCH) {
-            System.out.println("Хетчбек");
-        } else if (getBodyTypes() == BodyType.KROSSOVER) {
-            System.out.println("Кроссовер");
-        } else if (getBodyTypes() == BodyType.KUPE) {
-            System.out.println("Купе");
-        } else if (getBodyTypes() == BodyType.FURGON) {
-            System.out.println("Фургон");
-        } else if (getBodyTypes() == BodyType.MINIVEN) {
-            System.out.println("Минивэн");
-        } else if (getBodyTypes() == BodyType.PICUP) {
-            System.out.println("Пикап");
-        } else if (getBodyTypes() == BodyType.VNEDOROJ) {
-            System.out.println("Внедорожник");
-        } else if (getBodyTypes() == BodyType.YNIVERSAL) {
-            System.out.println("Универсал");
+        if (getBodyTypes() != null) {
+           getBodyTypes().toString();
         } else {
             System.out.println("Данных по транспортному средству недостаточно");
         }
     }
+
 
 
     @Override

@@ -27,16 +27,15 @@ public class Main {
 
 
 
+
 //       printInfo(lada);
 //       lada.printType();
 //
 //       MAN.printType();
 //       ZIL.printType();
 //       BMW.printType();
-//       Audi.printType();
 //       Hyundai.printType();
 //       Haval.printType();
-//       Liaz.printType();
 //       KAMAZ.printType();
 //       Maz.printType();
 //       MAZ.printType();

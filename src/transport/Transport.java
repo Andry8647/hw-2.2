@@ -62,14 +62,14 @@ private T driver;
     }
 
 
-    @Override
-    public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineCapacity=" + engineCapacity +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Transport{" +
+//                "brand='" + brand + '\'' +
+//                ", model='" + model + '\'' +
+//                ", engineCapacity=" + engineCapacity +
+//                '}';
+//    }
     public abstract void  startMoving();
 
     public abstract void stopMoving();

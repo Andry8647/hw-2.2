@@ -18,6 +18,7 @@ public enum Gruz {N1(null,5f),
     public double getGruz2() {
         return gruz2;
     }
+    @Override
     public String toString() {
         String a;
         if(gruz1 == null){

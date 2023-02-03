@@ -20,6 +20,7 @@ public enum BusVmestimost {VERYMIN(null,10),
     public double getMest2() {
         return mest2;
     }
+    @Override
     public String toString() {
         String a;
         if(mest1 == null){

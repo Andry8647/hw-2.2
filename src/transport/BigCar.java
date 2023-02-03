@@ -21,6 +21,10 @@ public class BigCar  extends Transport<Drivers3> {
         return gruz;
     }
 
+    public void setGruz(Gruz gruz) {
+        this.gruz = gruz;
+    }
+
     @Override
     public void passDiagnostics() {
         if(getDriver().getPrava() != "С" & getDriver().getPrava() != null){
@@ -43,12 +47,8 @@ public class BigCar  extends Transport<Drivers3> {
 
 
     public void printType() {
-        if (getGruz() == Gruz.N1){
-            System.out.println("До 3.5");
-        }else if(getGruz() == Gruz.N2){
-            System.out.println("От 3.5 до 12");
-        } else if (getGruz() == Gruz.N3){
-            System.out.println("От 12");
+        if (getGruz() != null){
+           getGruz().toString();
         } else {
             System.out.println("Данных по транспортному средству недостаточно");
         }
