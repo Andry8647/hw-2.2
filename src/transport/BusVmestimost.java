@@ -22,6 +22,7 @@ public enum BusVmestimost {VERYMIN(null,10),
     }
     @Override
     public String toString() {
+
         String a;
         if(mest1 == null){
             a = "Вместимость: \"до "+ mest2 +" человек.\"";

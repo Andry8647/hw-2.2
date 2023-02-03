@@ -49,7 +49,7 @@ public class BigCar  extends Transport<Drivers3> {
 
     public void printType() {
         if (getGruz() != null){
-           getGruz().toString();
+            System.out.println(getGruz().toString());
         } else {
             System.out.println("Данных по транспортному средству недостаточно");
         }

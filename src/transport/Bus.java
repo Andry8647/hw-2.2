@@ -40,7 +40,7 @@ public class Bus  extends Transport<Drivers2>  {
 
     public void printType() {
         if(getBusVmestimost() != null ){
-            getBusVmestimost().toString();
+            System.out.println(getBusVmestimost().toString());
         } else {
             System.out.println("Данных по транспортному средству недостаточно");
         }

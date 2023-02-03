@@ -21,6 +21,7 @@ public enum BodyType {SEDAN("Седан!"),
     }
     @Override
     public String toString() {
+
         return "Type{" +
                 "Тип кузова " + getKuzov() + '\'' +
                 '}';

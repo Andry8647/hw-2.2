@@ -20,6 +20,7 @@ public enum Gruz {N1(null,5f),
     }
     @Override
     public String toString() {
+
         String a;
         if(gruz1 == null){
              a = "Грузоподъемность: \"до "+ gruz2 +" тонн.\"";

@@ -21,6 +21,8 @@ public class Main {
         BigCar Maz = new BigCar("MAZ","P1",4.0,Artem, Gruz.N3);
         BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem, null);
 
+        Audi.printType();
+
         passDiagnostics(lada);
  //       passDiagnostics(Maz);
 
