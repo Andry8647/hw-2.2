@@ -18,7 +18,7 @@ public class Main {
 
         Drivers1 Anton = new Drivers1("Антон", "B",3);
         Drivers2 Andrei = new Drivers2("Андрей ", "C",3);
-        Drivers3 Artem = new Drivers3("Артем ", null,3);
+        Drivers3 Artem = new Drivers3("Артем ", "D",3);
        // Anton.goDo();
         Car lada = new Car("LADA","Vesta",2.0,Anton,mechanics, BodyType.KUPE);
         Car BMW = new Car("BMW","M5",4.4,Anton,mechanics,BodyType.SEDAN);
@@ -74,6 +74,7 @@ public class Main {
  //       passDiagnostics(Maz);
 
 
+        Transport.passDiagnostics(lada,Audi,Liaz);
 
 
 

@@ -32,16 +32,12 @@ public class BigCar  extends Transport<Drivers3> {
     }
 
     @Override
-    public void passDiagnostics() {
-        if(getDriver().getPrava() == null){
-            throw new UnsupportedOperationException("Необходимо указать тип прав!");
-        }else if( !getDriver().getPrava().equals("D") ){
-            throw new UnsupportedOperationException("Права не подходят");
-        }else  {
-            System.out.println("Права подходят");
+    public void pushDiagnostics() {
+        System.out.println("Автомобиль "+ getBrand()+" " + getModel() + "  прошел диагностику");
 
-        }
     }
+
+
 
     @Override
     public void startMoving(){

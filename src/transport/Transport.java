@@ -73,12 +73,22 @@ ServiceStation serviceStation;
 
     public abstract void printOfVodila();
 
+    public abstract void pushDiagnostics();
+
+    public static void passDiagnostics(Transport... transports){
+        for (Transport transport: transports) {
+            try{
+                transport.pushDiagnostics();
+            }catch (UnsupportedOperationException e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 
 
 
 
 
-    public  abstract void passDiagnostics() ;
 
 
 //    @Override

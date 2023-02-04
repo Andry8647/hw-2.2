@@ -18,15 +18,17 @@ public class Car  extends Transport<Drivers1> {
     }
 
     @Override
-    public void passDiagnostics()  {
-        if(getDriver().getPrava() == null){
-            throw new UnsupportedOperationException("Необходимо указать тип прав!");
-        }else if( !getDriver().getPrava().equals("B") ){
-            throw new UnsupportedOperationException("Права не подходят");
-        }else  {
-            System.out.println("Права подходят");
+    public void pushDiagnostics()  {
+        System.out.println("Автомобиль "+ getBrand()+" " + getModel() + "  прошел диагностику");
 
-        }
+//        if(getDriver().getPrava() == null){
+//            throw new UnsupportedOperationException("Необходимо указать тип прав!");
+//        }else if( !getDriver().getPrava().equals("B") ){
+//            throw new UnsupportedOperationException("Права не подходят");
+//        }else  {
+//            System.out.println("Права подходят");
+
+ //       }
     }
 
     public BodyType getBodyTypes(){
