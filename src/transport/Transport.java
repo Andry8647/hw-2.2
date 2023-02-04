@@ -1,0 +1,215 @@
+package transport;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public abstract class  Transport<T extends Drivers> implements Competing{
+private final String brand;
+private final String model;
+private double engineCapacity;
+private T driver;
+Map<Transport,Mechanic> mechanics;
+
+ServiceStation serviceStation;
+
+
+    public Transport(String brand, String model, double engineCapacity, T driver, Map<Transport,Mechanic> mechanics) {
+        if (brand != null) {
+            this.brand = brand;
+        } else {
+            this.brand = "default";
+        }
+        if (model != null) {
+            this.model = model;
+        } else {
+            this.model = "default";
+        }
+        if (engineCapacity < 0) {
+            this.engineCapacity = 1.6;
+        } else {
+            this.engineCapacity = engineCapacity;
+        }
+        setDriver(driver);
+            setMechanics(mechanics);
+        }
+
+
+
+
+    public Map<Transport, Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public void setMechanics(Map<Transport, Mechanic> mechanics) {
+        this.mechanics = mechanics;
+
+//        List<Transport> newZnach = new ArrayList<>();
+//
+//        for (Transport transports : mechanics.keySet()) {
+//
+//            newZnach.add(transports);
+//        }
+//
+//        for (int i = 0; i < newZnach.size(); i++) {
+//            for (int j = 0; j < newZnach.size(); j++) {
+//                if (newZnach.get(i).equals(newZnach.get(j)) & i!= j) {
+//                    System.out.println("Повтор запрещен" + newZnach.get(i) + " " + newZnach.get(j));
+//
+//                } else {
+//
+//
+//                }
+//            }
+//        }
+
+    }
+
+    public ServiceStation getServiceStation() {
+        return serviceStation;
+    }
+
+    public void setServiceStation(ServiceStation serviceStation) {
+        this.serviceStation = serviceStation;
+    }
+
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getEngineCapacity() {
+        return engineCapacity;
+    }
+
+    public void setEngineCapacity(double engineCapacity) {
+        this.engineCapacity = engineCapacity;
+    }
+
+
+
+    public abstract void pushDiagnostics();
+
+    public static void passDiagnostics(Transport... transports){
+        for (Transport transport: transports) {
+            try{
+                transport.pushDiagnostics();
+            }catch (UnsupportedOperationException e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+
+
+
+
+
+
+//    @Override
+//    public String toString() {
+//        return "Transport{" +
+//                "brand='" + brand + '\'' +
+//                ", model='" + model + '\'' +
+//                ", engineCapacity=" + engineCapacity +
+//                '}';
+//    }
+    public abstract void  startMoving();
+
+    public abstract void stopMoving();
+    public abstract void printType();
+
+
+
+
+    //    private  String brand;
+//    private  String madel;
+//    private  int year;
+//    private  String country;
+//    private  String color;
+//    private  int maxSpeed;
+//
+//    public Transport(String brand, String madel,String color, int year, String country,  int maxSpeed) {
+//        if (brand != null){
+//            this.brand = brand;
+//        }else {
+//            this.brand = "default";
+//        }
+//        if(madel!= null){
+//            this.madel = madel;
+//        }else {
+//            this.madel = "default";
+//        }
+//        if(color!=null){
+//            this.color = color;
+//        }else {
+//            this.color = "Белый";
+//        }
+//        if (year>0){
+//            this.year = year;
+//        }else {
+//            this.year = 2000;
+//        }
+//        if (country!=null){
+//            this.country = country;
+//        }else {
+//            this.country = "default";
+//        }
+//        if (maxSpeed > 0){
+//            this.maxSpeed = maxSpeed;
+//        }else {
+//            this.maxSpeed = maxSpeed;
+//        }
+//    }
+//    public  String getColor() {
+//        return color;
+//    }
+//
+//    public void setColor(String color) {
+//        this.color = color;
+//    }
+//
+//    public  int getMaxSpeed() {
+//        return maxSpeed;
+//    }
+//
+//    public void setMaxSpeed(int maxSpeed) {
+//        this.maxSpeed = maxSpeed;
+//    }
+//
+//    public String getBrand() {
+//        return brand;
+//    }
+//
+//    public void setBrand(String brand) {
+//        this.brand = brand;
+//    }
+//
+//    public  String getMadel() {
+//        return madel;
+//    }
+//
+//    public void setMadel(String madel) {
+//        this.madel = madel;
+//    }
+//
+//    public  int getYear() {
+//        return year;
+//    }
+//
+//    public  String getCountry() {
+//        return country;
+//    }
+}
