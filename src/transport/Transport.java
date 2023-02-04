@@ -2,18 +2,19 @@ package transport;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public abstract class  Transport<T extends Drivers> implements Competing{
 private final String brand;
 private final String model;
 private double engineCapacity;
 private T driver;
-List<Mechanic> mechanics;
+Map<Transport,Mechanic> mechanics;
 
 ServiceStation serviceStation;
 
 
-    public Transport(String brand, String model, double engineCapacity, T driver,List<Mechanic> mechanics) {
+    public Transport(String brand, String model, double engineCapacity, T driver, Map<Transport,Mechanic> mechanics) {
         if (brand != null) {
             this.brand = brand;
         } else {
@@ -30,20 +31,46 @@ ServiceStation serviceStation;
             this.engineCapacity = engineCapacity;
         }
         setDriver(driver);
-        setMechanics(mechanics);
-
-
-    }
+            setMechanics(mechanics);
+        }
 
 
 
 
-    public void setMechanics(List<Mechanic> mechanics) {
-        this.mechanics = mechanics;
-    }
-
-    public List<Mechanic> getMechanics() {
+    public Map<Transport, Mechanic> getMechanics() {
         return mechanics;
+    }
+
+    public void setMechanics(Map<Transport, Mechanic> mechanics) {
+        this.mechanics = mechanics;
+
+//        List<Transport> newZnach = new ArrayList<>();
+//
+//        for (Transport transports : mechanics.keySet()) {
+//
+//            newZnach.add(transports);
+//        }
+//
+//        for (int i = 0; i < newZnach.size(); i++) {
+//            for (int j = 0; j < newZnach.size(); j++) {
+//                if (newZnach.get(i).equals(newZnach.get(j)) & i!= j) {
+//                    System.out.println("Повтор запрещен" + newZnach.get(i) + " " + newZnach.get(j));
+//
+//                } else {
+//
+//
+//                }
+//            }
+//        }
+
+    }
+
+    public ServiceStation getServiceStation() {
+        return serviceStation;
+    }
+
+    public void setServiceStation(ServiceStation serviceStation) {
+        this.serviceStation = serviceStation;
     }
 
     public T getDriver() {
@@ -71,7 +98,7 @@ ServiceStation serviceStation;
         this.engineCapacity = engineCapacity;
     }
 
-    public abstract void printOfVodila();
+
 
     public abstract void pushDiagnostics();
 

@@ -1,21 +1,19 @@
 package transport;
 
 import java.util.List;
+import java.util.Map;
 
 public class Car  extends Transport<Drivers1> {
 
 
     private BodyType bodyTypes;
 
-    public Car(String brand, String model, double engineCapacity, Drivers1 driver, List<Mechanic> mechanic, BodyType bodyTypes) {
+    public Car(String brand, String model, double engineCapacity, Drivers1 driver, Map<Transport,Mechanic> mechanic, BodyType bodyTypes) {
         super(brand, model, engineCapacity, driver, mechanic);
         this.bodyTypes = bodyTypes;
 
     }
-    public void printOfVodila()  {
-        System.out.println("У водителя " + getDriver().getName() + " есть механики " + getMechanics());
 
-    }
 
     @Override
     public void pushDiagnostics()  {
@@ -37,6 +35,7 @@ public class Car  extends Transport<Drivers1> {
     }
 
     public void setBodyTypes(BodyType bodyTypes) {
+
         this.bodyTypes = bodyTypes;
     }
 

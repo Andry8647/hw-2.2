@@ -1,19 +1,17 @@
 package transport;
 
 import java.util.List;
+import java.util.Map;
 
 public class Bus  extends Transport<Drivers2>  {
 
 
     private BusVmestimost busVmestimost;
-    public Bus(String brand, String model, double engineCapacity, Drivers2 driver,List<Mechanic> mechanic, BusVmestimost busVmestimost) {
+    public Bus(String brand, String model, double engineCapacity, Drivers2 driver, Map<Transport,Mechanic> mechanic, BusVmestimost busVmestimost) {
         super(brand, model, engineCapacity, driver,  mechanic);
         this.busVmestimost =busVmestimost;
     }
-    public void printOfVodila()  {
-        System.out.println("У водителя " + getDriver().getName() + " есть механики " + getMechanics());
 
-    }
 
     public BusVmestimost getBusVmestimost() {
         return busVmestimost;

@@ -1,7 +1,9 @@
 import transport.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,11 +12,21 @@ public class Main {
 
         ArrayList<Transport> cars = new ArrayList<>();
         List<Drivers> drivers = new ArrayList<>();
-        ArrayList<Mechanic> mechanics = new ArrayList<>();
+        Map<Transport,Mechanic> mechanics = new HashMap<>();
 
 
         Mechanic Antony = new Mechanic("Антони Феррари","Феррари");
         Mechanic Berlytony = new Mechanic("Берлутони Франческо","Бугатти");
+        Mechanic Vlad = new Mechanic("Влад","Бугатти");
+        Mechanic Ignat = new Mechanic("Игнат","Бугатти");
+        Mechanic Oleg = new Mechanic("Олег","Бугатти");
+        Mechanic Petya = new Mechanic("Петя","Бугатти");
+        Mechanic Lika = new Mechanic("Лика","Бугатти");
+        Mechanic Zara = new Mechanic("Зара","Бугатти");
+        Mechanic Rita = new Mechanic("Рита","Бугатти");
+        Mechanic Olesa = new Mechanic("Олеся","Бугатти");
+        Mechanic Islam = new Mechanic("Ислам","Бугатти");
+        Mechanic Mario = new Mechanic("Марио","Бугатти");
 
         Drivers1 Anton = new Drivers1("Антон", "B",3);
         Drivers2 Andrei = new Drivers2("Андрей ", "C",3);
@@ -36,16 +48,31 @@ public class Main {
 
 
 
-        serviceStation.addCar(lada);
-        serviceStation.addCar(Audi);
-        serviceStation.removeCar();
-        serviceStation.kolCar();
+//        serviceStation.addCar(lada);
+//        serviceStation.addCar(Audi);
+//        serviceStation.removeCar();
+//        serviceStation.kolCar();
 
 
 
-        mechanics.add(Antony);
-        mechanics.add(Berlytony);
 
+        mechanics.put(lada,Antony);
+        mechanics.put(Audi,Berlytony);
+        mechanics.put(BMW,Oleg);
+        mechanics.put(MAN,Vlad);
+        mechanics.put(Man,Olesa);
+        mechanics.put(MAZ,Ignat);
+        mechanics.put(Maz,Islam);
+        mechanics.put(Hyundai,Petya);
+        mechanics.put(Haval,Mario);
+        mechanics.put(KAMAZ,Rita);
+        mechanics.put(Liaz,Zara);
+        mechanics.put(ZIL,Lika);
+
+
+
+
+        System.out.println(mechanics.get(BMW).getNameAndSurname());
 
         drivers.add(Anton);
         drivers.add(Andrei);
@@ -65,8 +92,13 @@ public class Main {
         cars.add(KAMAZ);
         cars.add(ZIL);
 
- //       System.out.println(mechanics.get(0).getNameAndSurname());
- //       printOfVodila(lada);
+//        System.out.println(mechanics.get(lada).getNameAndSurname());
+        printOfVodila(lada);
+        printOfVodila(Audi);
+        printOfVodila(MAN);
+        printOfVodila(Man);
+        printOfVodila(Liaz);
+        printOfVodila(lada);
 
 //        Audi.printType();
 //
@@ -74,7 +106,7 @@ public class Main {
  //       passDiagnostics(Maz);
 
 
-        Transport.passDiagnostics(lada,Audi,Liaz);
+   //     Transport.passDiagnostics(lada,Audi,Liaz);
 
 
 
@@ -163,10 +195,11 @@ public class Main {
             }
         }
     }
-    private static void printOfVodila(Transport<?> transport){
-        System.out.println("У водителя " + transport.getDriver().getName() + " есть механики " + transport.getMechanics().get(0).getNameAndSurname() + " и " + transport.getMechanics().get(1).getNameAndSurname());
-    }
+    private static void printOfVodila(Transport<?> transport) {
 
+        System.out.println("У автомобиля " + transport.getBrand() + " есть механики " + transport.getMechanics().get(transport).getNameAndSurname());
+
+    }
     private static void printService(Transport<?> transport) {
 
     }
