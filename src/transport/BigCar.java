@@ -1,15 +1,21 @@
 package transport;
 
+import java.util.List;
+
 public class BigCar  extends Transport<Drivers3> {
 
 
     private Gruz gruz;
 
-    public BigCar(String brand, String model, double engineCapacity, Drivers3 driver, Gruz gruz) {
-        super(brand, model, engineCapacity, driver);
+    public BigCar(String brand, String model, double engineCapacity, Drivers3 driver,List<Mechanic> mechanic, Gruz gruz) {
+        super(brand, model, engineCapacity, driver, mechanic);
 
             this.gruz = gruz;
 
+
+    }
+    public void printOfVodila()  {
+        System.out.println("У водителя " + getDriver().getName() + " есть механики " + getMechanics());
 
     }
 

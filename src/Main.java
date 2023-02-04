@@ -1,30 +1,80 @@
 import transport.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
+        ServiceStation serviceStation = new ServiceStation();
+
+        ArrayList<Transport> cars = new ArrayList<>();
+        List<Drivers> drivers = new ArrayList<>();
+        ArrayList<Mechanic> mechanics = new ArrayList<>();
+
+
+        Mechanic Antony = new Mechanic("Антони Феррари","Феррари");
+        Mechanic Berlytony = new Mechanic("Берлутони Франческо","Бугатти");
 
         Drivers1 Anton = new Drivers1("Антон", "B",3);
         Drivers2 Andrei = new Drivers2("Андрей ", "C",3);
         Drivers3 Artem = new Drivers3("Артем ", null,3);
        // Anton.goDo();
-        Car lada = new Car("LADA","Vesta",2.0,Anton, BodyType.KUPE);
-        Car BMW = new Car("BMW","M5",4.4,Anton,BodyType.SEDAN);
-        Car Audi = new Car("Audi","A7",4.0,Anton, BodyType.KROSSOVER);
-        Car Haval = new Car("Haval","H7",2.0,Anton, null);
-        Bus MAZ = new Bus("MAZ","A10",5.0,Andrei,BusVmestimost.BIG);
-        Bus Liaz = new Bus("Liaz","50",6.0,Andrei, BusVmestimost.MIN);
-        Bus Man = new Bus("Man","K1",4.0,Andrei, BusVmestimost.VERYMIN);
-        Bus Hyundai = new Bus("Hyundai","50A",8.0,Andrei, null);
-        BigCar MAN = new BigCar("MAN","H10",4.0,Artem,Gruz.N1);
-        BigCar KAMAZ = new BigCar("KAMAZ","L1",4.0,Artem, Gruz.N2);
-        BigCar Maz = new BigCar("MAZ","P1",4.0,Artem, Gruz.N3);
-        BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem, null);
+        Car lada = new Car("LADA","Vesta",2.0,Anton,mechanics, BodyType.KUPE);
+        Car BMW = new Car("BMW","M5",4.4,Anton,mechanics,BodyType.SEDAN);
+        Car Audi = new Car("Audi","A7",4.0,Anton,mechanics, BodyType.KROSSOVER);
+        Car Haval = new Car("Haval","H7",2.0,Anton, mechanics,null);
+        Bus MAZ = new Bus("MAZ","A10",5.0,Andrei,mechanics,BusVmestimost.BIG);
+        Bus Liaz = new Bus("Liaz","50",6.0,Andrei,mechanics, BusVmestimost.MIN);
+        Bus Man = new Bus("Man","K1",4.0,Andrei, mechanics,BusVmestimost.VERYMIN);
+        Bus Hyundai = new Bus("Hyundai","50A",8.0,Andrei,mechanics, null);
+        BigCar MAN = new BigCar("MAN","H10",4.0,Artem,mechanics,Gruz.N1);
+        BigCar KAMAZ = new BigCar("KAMAZ","L1",4.0,Artem,mechanics, Gruz.N2);
+        BigCar Maz = new BigCar("MAZ","P1",4.0,Artem,mechanics, Gruz.N3);
+        BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem, mechanics,null);
 
-        Audi.printType();
 
-        passDiagnostics(lada);
+
+
+        serviceStation.addCar(lada);
+        serviceStation.addCar(Audi);
+        serviceStation.removeCar();
+        serviceStation.kolCar();
+
+
+
+        mechanics.add(Antony);
+        mechanics.add(Berlytony);
+
+
+        drivers.add(Anton);
+        drivers.add(Andrei);
+        drivers.add(Artem);
+
+
+        cars.add(lada);
+        cars.add(BMW);
+        cars.add(Audi);
+        cars.add(Haval);
+        cars.add(Maz);
+        cars.add(MAZ);
+        cars.add(Liaz);
+        cars.add(Man);
+        cars.add(Hyundai);
+        cars.add(MAN);
+        cars.add(KAMAZ);
+        cars.add(ZIL);
+
+ //       System.out.println(mechanics.get(0).getNameAndSurname());
+ //       printOfVodila(lada);
+
+//        Audi.printType();
+//
+//        passDiagnostics(lada);
  //       passDiagnostics(Maz);
+
+
+
 
 
 
@@ -101,6 +151,8 @@ public class Main {
 //                + " ," + bus.getColor() + " цвет " +" максимальная скорость " + bus.getMaxSpeed());
 //    }
     }
+
+
     public static void passDiagnostics(Transport... transports){
         for (Transport transport: transports) {
             try{
@@ -110,7 +162,15 @@ public class Main {
             }
         }
     }
+    private static void printOfVodila(Transport<?> transport){
+        System.out.println("У водителя " + transport.getDriver().getName() + " есть механики " + transport.getMechanics().get(0).getNameAndSurname() + " и " + transport.getMechanics().get(1).getNameAndSurname());
+    }
+
+    private static void printService(Transport<?> transport) {
+
+    }
+
     private static void printInfo(Transport<?> transport){
-        System.out.println("Водитель " + transport.getDriver().getName() +" c правами категории  "+ transport.getDriver().getPrava() + " управляет автомобилем " + transport.getBrand() + " и будет учавствовать в заезде");
+        System.out.println("Водитель " + transport.getDriver().getName() +" c правами категории  "+ transport.getDriver().getPrava() + " управляет автомобилем " + transport.getBrand() + " и будет учавствовать в заезде с механиками " + transport.getMechanics().get(0).getNameAndSurname() + " и " + transport.getMechanics().get(1).getNameAndSurname());
     }
 }

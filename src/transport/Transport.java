@@ -1,13 +1,19 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class  Transport<T extends Drivers> implements Competing{
 private final String brand;
 private final String model;
 private double engineCapacity;
 private T driver;
+List<Mechanic> mechanics;
+
+ServiceStation serviceStation;
 
 
-    public Transport(String brand, String model, double engineCapacity, T driver) {
+    public Transport(String brand, String model, double engineCapacity, T driver,List<Mechanic> mechanics) {
         if (brand != null) {
             this.brand = brand;
         } else {
@@ -24,8 +30,20 @@ private T driver;
             this.engineCapacity = engineCapacity;
         }
         setDriver(driver);
+        setMechanics(mechanics);
 
 
+    }
+
+
+
+
+    public void setMechanics(List<Mechanic> mechanics) {
+        this.mechanics = mechanics;
+    }
+
+    public List<Mechanic> getMechanics() {
+        return mechanics;
     }
 
     public T getDriver() {
@@ -52,6 +70,10 @@ private T driver;
     public void setEngineCapacity(double engineCapacity) {
         this.engineCapacity = engineCapacity;
     }
+
+    public abstract void printOfVodila();
+
+
 
 
 
