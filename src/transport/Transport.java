@@ -31,8 +31,11 @@ private Map<Transport,Mechanic> mechanics;
             this.engineCapacity = engineCapacity;
         }
         setDriver(driver);
-            setMechanics(mechanics);
+        setMechanics(mechanics);
         }
+
+
+
 
 
 
@@ -42,11 +45,6 @@ private Map<Transport,Mechanic> mechanics;
     }
 
     public void setMechanics(Map<Transport, Mechanic> mechanics) {
-        List<Transport> newZnach = new ArrayList<>();
-        if (mechanics.containsKey(mechanics)){
-
-        }
-
         this.mechanics = mechanics;
 
 //        List<Transport> newZnach = new ArrayList<>();
