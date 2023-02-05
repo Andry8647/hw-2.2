@@ -9,9 +9,9 @@ private final String brand;
 private final String model;
 private double engineCapacity;
 private T driver;
-Map<Transport,Mechanic> mechanics;
+private Map<Transport,Mechanic> mechanics;
 
-ServiceStation serviceStation;
+
 
 
     public Transport(String brand, String model, double engineCapacity, T driver, Map<Transport,Mechanic> mechanics) {
@@ -42,6 +42,11 @@ ServiceStation serviceStation;
     }
 
     public void setMechanics(Map<Transport, Mechanic> mechanics) {
+        List<Transport> newZnach = new ArrayList<>();
+        if (mechanics.containsKey(mechanics)){
+
+        }
+
         this.mechanics = mechanics;
 
 //        List<Transport> newZnach = new ArrayList<>();
@@ -65,13 +70,7 @@ ServiceStation serviceStation;
 
     }
 
-    public ServiceStation getServiceStation() {
-        return serviceStation;
-    }
 
-    public void setServiceStation(ServiceStation serviceStation) {
-        this.serviceStation = serviceStation;
-    }
 
     public T getDriver() {
         return driver;

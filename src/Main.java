@@ -10,6 +10,7 @@ public class Main {
 
         ServiceStation serviceStation = new ServiceStation();
 
+
         ArrayList<Transport> cars = new ArrayList<>();
         List<Drivers> drivers = new ArrayList<>();
         Map<Transport,Mechanic> mechanics = new HashMap<>();
@@ -48,7 +49,7 @@ public class Main {
 
 
 
-//        serviceStation.addCar(lada);
+         serviceStation.addCar(lada);
 //        serviceStation.addCar(Audi);
 //        serviceStation.removeCar();
 //        serviceStation.kolCar();
