@@ -54,11 +54,11 @@ public class Main {
 //        System.out.println(drivers.size());
 //        serviceStation.addCar(Audi);
 //        serviceStation.removeCar();
-//        serviceStation.kolCar();
+        serviceStation.kolCar();
 
-//        additionControl.addMech(lada,Antony);
-//        additionControl.addMech(lada,Antony);
-//        additionControl.addMech(Audi,Berlytony);
+        additionControl.addMech(lada,Antony);
+        additionControl.addMech(lada,Antony);
+        additionControl.addMech(Audi,Berlytony);
 
         additionControl.addDriver(Andrei);
         additionControl.addDriver(Anton);

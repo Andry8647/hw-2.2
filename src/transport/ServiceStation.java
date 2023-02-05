@@ -22,6 +22,7 @@ public class ServiceStation {
     public void removeCar()  {
 
         service.remove(0);
+        System.out.println("Провести тех обслуживание");
         System.out.println("Машина прошла диагностику, заехала следующая");
     }
 }

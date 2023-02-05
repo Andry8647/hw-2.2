@@ -6,8 +6,6 @@ public class AdditionControl {
      Map<Transport,Mechanic> mechanics = new HashMap<>();
      Set<Drivers> driver = new HashSet<>() ;
 
-
-
     public void addMech(Transport transport, Mechanic mechanic) {
 
         if(!mechanics.containsKey(transport) & !mechanics.containsValue(mechanic)){
