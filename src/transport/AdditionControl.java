@@ -8,12 +8,9 @@ public class AdditionControl {
 
     public void addMech(Transport transport, Mechanic mechanic) {
 
-        if(!mechanics.containsKey(transport) & !mechanics.containsValue(mechanic)){
                mechanics.put(transport,mechanic);
             System.out.println("К машине " + transport.getBrand() + " добавлен механик " + mechanic.getNameAndSurname() + " из компании " + mechanic.getCompany());
-        }else {
-            System.out.println("Повтор запрещен");
-        }
+
     }
     public void addDriver(Drivers as) {
         driver.add(as);
