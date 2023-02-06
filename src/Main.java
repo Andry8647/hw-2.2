@@ -65,6 +65,7 @@ public class Main {
         additionControl.addDriver(Artem);
 
         additionControl.allDriver();
+        additionControl.allMech();
 
 
 

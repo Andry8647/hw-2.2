@@ -12,6 +12,13 @@ public class AdditionControl {
             System.out.println("К машине " + transport.getBrand() + " добавлен механик " + mechanic.getNameAndSurname() + " из компании " + mechanic.getCompany());
 
     }
+    public void allMech() {
+
+        for (Map.Entry<Transport, Mechanic> mechanicEntry: mechanics.entrySet()) {
+            System.out.println("Машина " + mechanicEntry.getKey().getBrand() + ":  механик " + mechanicEntry.getValue().getNameAndSurname());
+        }
+    }
+
     public void addDriver(Drivers as) {
         driver.add(as);
         System.out.println(as.getName() + " водитель добавлен");
