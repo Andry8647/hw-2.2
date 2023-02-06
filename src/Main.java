@@ -50,7 +50,7 @@ public class Main {
         serviceStation.addCar(Audi);
         serviceStation.addCar(BMW);
          serviceStation.addCar(lada);
-         serviceStation.addBig(MAN);
+         serviceStation.addCar(Man);
          serviceStation.removeCar();
 
 //        System.out.println(drivers.size());

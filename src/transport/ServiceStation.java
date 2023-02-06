@@ -17,22 +17,20 @@ public class ServiceStation {
 
     }
 
-    public void addCar(Car car)  {
+    public void addCar(Transport transport)  {
 
+       boolean a = transport instanceof Bus;
 //       service1.add(car);
-       service1.offer(car);
+        if(a==true){
+            System.out.println("Автобусам нельзя проходить диагностику");
+        }else {
+            service1.offer(transport);
+            System.out.println(transport.getBrand() + " добавлена в очереди ");
+        }
 
-            System.out.println(car.getBrand() + " добавлена в очереди ");
-
-    }
-    public void addBig(BigCar bigCar)  {
-
-//            service1.add(bigCar);
-        service1.offer(bigCar);
-
-        System.out.println(bigCar.getBrand() + " добавлена в очереди ");
 
     }
+
 
     public void removeCar()  {
         service1.poll();
