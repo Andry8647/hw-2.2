@@ -47,25 +47,27 @@ public class Main {
         BigCar ZIL = new BigCar("ZIL","D1",4.0,Artem, mechanics,null);
 
 
-
-
+        serviceStation.addCar(Audi);
+        serviceStation.addCar(BMW);
          serviceStation.addCar(lada);
+         serviceStation.addBig(MAN);
+         serviceStation.removeCar();
 
 //        System.out.println(drivers.size());
 //        serviceStation.addCar(Audi);
 //        serviceStation.removeCar();
-        serviceStation.kolCar();
-
-        additionControl.addMech(lada,Antony);
-        additionControl.addMech(lada,Antony);
-        additionControl.addMech(Audi,Berlytony);
-
-        additionControl.addDriver(Andrei);
-        additionControl.addDriver(Anton);
-        additionControl.addDriver(Artem);
-
-        additionControl.allDriver();
-        additionControl.allMech();
+//        serviceStation.kolCar();
+//
+//        additionControl.addMech(lada,Antony);
+//        additionControl.addMech(lada,Antony);
+//        additionControl.addMech(Audi,Berlytony);
+//
+//        additionControl.addDriver(Andrei);
+//        additionControl.addDriver(Anton);
+//        additionControl.addDriver(Artem);
+//
+//        additionControl.allDriver();
+//        additionControl.allMech();
 
 
 

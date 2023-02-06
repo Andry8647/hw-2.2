@@ -1,28 +1,43 @@
 package transport;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class ServiceStation {
-    List<Transport> service = new ArrayList<>();
+
+  private   Queue service1 = new LinkedList();
+//    List<Transport> service = new ArrayList<>();
     public void kolCar()  {
-        for (int i = 0; i < service.size(); i++) {
-            System.out.println(service.get(i).getBrand() + " в очереди ");
+
+        while ( service1.poll() != null) {
+            System.out.println(service1.poll());
         }
+//        for (int i = 0; i < service1.size(); i++) {
+////            System.out.println(service1.get(i).getBrand() + " в очереди ");
+//        }
 
     }
 
-    public void addCar(Transport car)  {
-       service.add(car);
+    public void addCar(Car car)  {
+
+//       service1.add(car);
+       service1.offer(car);
 
             System.out.println(car.getBrand() + " добавлена в очереди ");
 
     }
-    public void removeCar()  {
+    public void addBig(BigCar bigCar)  {
 
-        service.remove(0);
-        System.out.println("Провести тех обслуживание");
-        System.out.println("Машина прошла диагностику, заехала следующая");
+//            service1.add(bigCar);
+        service1.offer(bigCar);
+
+        System.out.println(bigCar.getBrand() + " добавлена в очереди ");
+
+    }
+
+    public void removeCar()  {
+        service1.poll();
+        System.out.println("Машина  прошла диагностику, заехала следующая");
+
+
     }
 }
